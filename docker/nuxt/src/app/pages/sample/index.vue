@@ -1,13 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
+      <h1>
         サンプルページです。
       </h1>
       <app-sample/>
-      
       <nuxt-link to="/">トップページへのリンク</nuxt-link>
-      
     </div>
   </section>
 </template>
