@@ -1,6 +1,6 @@
 # sample
 
-> Nuxt.jsのサンプルプロジェクト
+> Nuxt.js勉強用
 
 ## Build Setup
 
