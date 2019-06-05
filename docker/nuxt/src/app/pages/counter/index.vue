@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     addApple (e) {
+      console.log(process.env.test);
       this.$store.commit('counter/addApple')
     },
     removeApple (e) {
