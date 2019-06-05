@@ -1,0 +1,18 @@
+version: '3'
+services:
+  nuxt:
+    container_name: nuxt
+    build:
+      context: ./docker/nuxt
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./docker/nuxt/src:/src:cached
+      # exclude volumes
+      - /src/app/node_modules
+    tty: true
+    stdin_open: true
+    # Hot Module Replacement (HMR) is enable for virtual box.
+    environment:
+      - CHOKIDAR_USEPOLLING=true
