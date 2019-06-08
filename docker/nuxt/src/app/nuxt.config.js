@@ -18,6 +18,12 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
+  ** plugins
+  */
+  plugins: [
+    { src: '~/plugins/infiniteloading', ssr: false }
+  ],
+  /*
   ** modules
   */
   modules: [
