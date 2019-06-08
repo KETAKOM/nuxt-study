@@ -15,7 +15,9 @@
         {{post.message}}
       </div>
       <div class="post-fotter">
-        お気に入りボタンを表示する
+        <!-- イイねを表示する -->
+        <input type="checkbox" class="favorite" v-model="post.favorite">
+        <span>イイね!!</span>
       </div>
     </div>
     <!-- 無限スクロール -->
@@ -34,11 +36,11 @@
     data() {
       return {
         posts: [
-          { id:1, user_name: 'Aさん', account_name: 'a_sync_san', message: 'Nuxtjsやってみた' },
-          { id:2, user_name: 'Bさん', account_name: 'bbbbbb_san', message: 'ハンバーガ食べた' },
-          { id:3, user_name: 'Cさん', account_name: 'c_net_san', message: 'APIモックサーバ立てないとwww' },
-          { id:4, user_name: '俺', account_name: 'ore', message: 'モスバーガなう' },
-          { id:5, user_name: 'Dさん', account_name: 'd_ddddaiou', message: '家帰ったよ' }
+          { id:1, user_name: 'Aさん', account_name: 'a_sync_san', message: 'Nuxtjsやってみた', favorite: false},
+          { id:2, user_name: 'Bさん', account_name: 'bbbbbb_san', message: 'ハンバーガ食べた', favorite: false},
+          { id:3, user_name: 'Cさん', account_name: 'c_net_san', message: 'APIモックサーバ立てないとwww', favorite: false},
+          { id:4, user_name: '俺', account_name: 'ore', message: 'モスバーガなう', favorite: false},
+          { id:5, user_name: 'Dさん', account_name: 'd_ddddaiou', message: '家帰ったよ', favorite: false}
         ],
         page: 0, // ページ位置（skipの値）
       }
@@ -48,11 +50,11 @@
       infiniteHandler: function() {
         setTimeout(() => {
           var results = [
-            { id:1, user_name: 'Aさん', message: 'Nuxtjsやってみた' },
-            { id:2, user_name: 'Bさん', message: 'ハンバーガ食べた' },
-            { id:3, user_name: 'Cさん', message: 'APIモックサーバ立てないとwww' },
-            { id:4, user_name: '俺', message: 'モスバーガなう' },
-            { id:5, user_name: 'Dさん', account_name: 'd_ddddaiou', message: '家帰ったよ' }
+            { id:1, user_name: 'Aさん', message: 'Nuxtjsやってみた', favorite: false},
+            { id:2, user_name: 'Bさん', message: 'ハンバーガ食べた', favorite: false},
+            { id:3, user_name: 'Cさん', message: 'APIモックサーバ立てないとwww', favorite: false},
+            { id:4, user_name: '俺', message: 'モスバーガなう', favorite: false},
+            { id:5, user_name: 'Dさん', account_name: 'd_ddddaiou', message: '家帰ったよ', favorite: false}
           ];
 
           for(var i =0; i < results.length; i++) {
